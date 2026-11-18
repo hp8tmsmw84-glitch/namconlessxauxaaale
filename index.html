@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri Ân Ngày Nhà Giáo Việt Nam 20/11</title>
+    <style>
+        /* Cài đặt chung */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fdfbf7;
+        }
+        
+        /* Phần Header / Banner */
+        header {
+            background: linear-gradient(135deg, #c0392b, #e67e22);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Thanh điều hướng */
+        nav {
+            background-color: #fff;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        nav a {
+            color: #c0392b;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            font-size: 1.05rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #e67e22;
+        }
+
+        /* Khung chứa nội dung chính */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        section {
+            background: #fff;
+            padding: 35px;
+            margin-bottom: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #c0392b;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        /* Phần Lịch sử hình thành */
+        .timeline {
+            list-style: none;
+            padding-left: 20px;
+            border-left: 3px solid #e67e22;
+        }
+        .timeline li {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .timeline li::before {
+            content: '✿';
+            position: absolute;
+            left: -29px;
+            top: 0;
+            color: #c0392b;
+            background: #fff;
+            font-size: 1.2rem;
+        }
+        .timeline strong {
+            color: #d35400;
+            font-size: 1.1rem;
+        }
+
+        /* Phần Thư viện hình ảnh */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            background: #fafafa;
+            text-align: center;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item p {
+            padding: 10px;
+            font-size: 0.9rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* Phần Video tri ân */
+        .video-wrapper {
+            text-align: center;
+        }
+        .video-wrapper video {
+            width: 100%;
+            max-width: 750px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            background-color: #000;
+        }
+
+        /* Phần Thành viên thực hiện */
+        .members-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .member-card {
+            background: #fff5eb;
+            border: 1px solid #f5cba7;
+            color: #b9770e;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            transition: transform 0.2s, background 0.2s;
+        }
+        .member-card:hover {
+            transform: translateY(-3px);
+            background: #fdebd0;
+            color: #9c640c;
+        }
+
+        /* Phần Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 50px;
+        }
+        footer p {
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner đầu trang -->
+    <header>
+        <h1>Chào Mừng Ngày Nhà Giáo Việt Nam 20/11</h1>
+        <p>"Tôn sư trọng đạo - Uống nước nhớ nguồn"</p>
+    </header>
+
+    <!-- Menu điều hướng -->
+    <nav>
+        <a href="#lich-su">Lịch Sử Hình Thành</a>
+        <a href="#hinh-anh">Khoảnh Khắc Kỷ Niệm</a>
+        <a href="#video-tri-an">Video Tri Ân</a>
+        <a href="#thanh-vien">Nhóm Thực Hiện</a>
+    </nav>
+
+    <div class="container">
+        <!-- Mục 1: Lịch sử hình thành -->
+        <section id="lich-su">
+            <h2>Lịch Sử Hình Thành Ngày 20/11</h2>
+            <p style="margin-bottom: 15px;">Ngày Nhà giáo Việt Nam (20/11) là dịp để các thế hệ học trò bày tỏ lòng biết ơn sâu sắc đến những người thầy, người cô đã tận tụy dìu dắt mình trên con đường tri thức.</p>
+            <ul class="timeline">
+                <li>
+                    <strong>Tháng 7/1946:</strong> Tổ chức quốc tế các nhà giáo tiến bộ được thành lập tại Paris (Pháp) với tên gọi <em>Liên hiệp quốc tế các Công đoàn Giáo dục (FISE)</em>.
+                </li>
+                <li>
+                    <strong>Năm 1949:</strong> Tại hội nghị ở Warszawa (Ba Lan), FISE đã xây dựng bản "Hiến chương các nhà giáo" gồm 15 chương, đấu tranh bảo vệ quyền lợi và đề cao vị thế của nghề dạy học.
+                </li>
+                <li>
+                    <strong>Tháng 7/1953:</strong> Công đoàn Giáo dục Việt Nam chính thức gia nhập tổ chức FISE.
+                </li>
+                <li>
+                    <strong>Từ 26 - 30/8/1957:</strong> Hội nghị FISE tại Warszawa với sự tham gia của 57 quốc gia (có Việt Nam) đã quyết định lấy ngày <strong>20/11/1958</strong> làm ngày "Quốc tế Hiến chương các nhà giáo". Ngày này lần đầu tiên được tổ chức trên toàn miền Bắc Việt Nam.
+                </li>
+                <li>
+                    <strong>Ngày 28/9/1982:</strong> Hội đồng Bộ trưởng (nay là Chính phủ) Việt Nam ban hành Quyết định số 167-HĐBT, chính thức lấy ngày <strong>20/11</strong> hằng năm là <strong>Ngày Nhà giáo Việt Nam</strong>.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Mục 2: Thư viện hình ảnh -->
+        <section id="hinh-anh">
+            <h2>Khoảnh Khắc Đáng Nhớ Dưới Mái Trường</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="anh1.jpg" alt="Các thầy giáo tham dự lễ kỷ niệm">
+                    <p>Quý thầy giáo trong buổi lễ trang trọng tại sân trường</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="anh2.jpg" alt="Tập thể lớp chụp ảnh kỷ niệm">
+                    <p>Tập thể lớp rạng rỡ cùng những bó hoa tươi thắm</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="anh3.jpg" alt="Hoạt động ngoại khóa của học sinh">
+                    <p>Những phút giây vui vẻ bên bạn bè</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="anh4.jpg" alt="Lớp học thân thương">
+                    <p>Kỷ niệm ấm áp bên cô giáo và tập thể lớp</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mục 3: Video tri ân -->
+        <section id="video-tri-an">
+            <h2>Video Tri Ân Thầy Cô</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Những lời chúc chân thành và kỷ niệm đẹp nhất được gửi gắm qua thước phim ngắn dưới đây:</p>
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="video_tri_an.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ thẻ video.
+                </video>
+            </div>
+        </section>
+
+        <!-- Mục 4: Thành viên thực hiện -->
+        <section id="thanh-vien">
+            <h2>Thành Viên Thực Hiện</h2>
+            <p style="text-align: center;">Sản phẩm được thực hiện với tất cả lòng biết ơn bởi nhóm học sinh:</p>
+            <div class="members-list">
+                <div class="member-card">🌸 Hồng Ân</div>
+                <div class="member-card">🌸 Duyên Anh</div>
+                <div class="member-card">🌸 Yến Thơ</div>
+                <div class="member-card">🌸 Kiều Vân</div>
+                <div class="member-card">🌸 Quỳnh Thư</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Chân trang -->
+    <footer>
+        <p><strong>Chúc mừng Ngày Nhà giáo Việt Nam 20/11</strong></p>
+        <p>Kính chúc quý thầy cô luôn mạnh khỏe, hạnh phúc và gặt hái nhiều thành công trong sự nghiệp trồng người!</p>
+    </footer>
+
+</body>
+</html>
